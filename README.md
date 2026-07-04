@@ -72,6 +72,17 @@
 | **AI 예측** | LSTM 기반 주간 발주량 예측 + 폐기율 경고 시스템 |
 | **데이터 파이프라인** | 외부 API 배치 수집 → 분석 DB 적재 자동화 |
 
+### 팀 · 역할 분담
+
+**2인 팀 프로젝트** — SSAFY 서울 17반 관통 프로젝트
+
+| 담당 | 역할 |
+|------|------|
+| **이도연** | 백엔드(Spring Boot · MyBatis · JWT 인증), 핵심 커머스 기능(멀티 판매처 가격비교 · 찜 · 마감임박 동적가격), 배포 인프라(Caddy · Docker Compose · Oracle Cloud VM · HTTPS), 데이터 분석 파이프라인(Growth KPI · Streamlit) |
+| **이정원** | 판매자/관리자 분석 대시보드(Reflex), 공급망 AI 분석, 홈·배너 이미지 연동 |
+
+**Live 배포**: [barofarm.duckdns.org](https://barofarm.duckdns.org)
+
 ---
 
 ## 2. 2-Layer 아키텍처
