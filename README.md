@@ -1,6 +1,5 @@
-# 🥬 BaroFarm(바로팜) — 신선식품 직거래 마켓 & 소상공인 스마트 물류 대시보드
+# BaroFarm(바로팜) — 신선식품 직거래 마켓 & 소상공인 스마트 물류 대시보드
 
-> **DA / DE 포트폴리오 프로젝트**  
 > Spring Boot + MyBatis 기반 백엔드 CRUD와 Growth 데이터 분석 · AI 수요 예측을 결합한 2-Layer 아키텍처
 
 [![Java](https://img.shields.io/badge/Java-17-007396?logo=openjdk&logoColor=white)](https://openjdk.org/)
@@ -11,26 +10,6 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-7.0-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
-
----
-
-## 🗓️ 진행 현황 (2026-06-16 업데이트)
-
-> **📢 팀 공유 — 데이터 분석 대시보드(`analytics/`) 1차 구축 완료**
->
-> 행동로그 합성 → Growth KPI 엔진 → Streamlit 대시보드 + 분석 API까지 **데이터쪽 파이프라인을 만들었습니다.**
-> 데이터는 합성(seed=42, 재현 가능)이지만, 그 위에서 계산하는 지표는 모두 실측입니다.
-
-| 모듈 | 파일 | 내용 |
-|---|---|---|
-| 행동로그 합성 | `analytics/simulate.py` | 조회·검색·찜·구매 이벤트를 확률모델로 생성 |
-| Growth KPI 엔진 | `analytics/kpi.py` | 퍼널 · 마감임박 딜 효과(2-비율 Z검정) · GMV/AOV · 재구매/코호트 · 카테고리/상품 |
-| 분석 대시보드 | `analytics/app.py` | Streamlit + Plotly 시각화 |
-| 분석 API | `analytics/api.py` | FastAPI `/analytics/*` (Vue 판매자 대시보드 연동용) |
-
-- **실행**: `cd analytics && pip install -r requirements.txt && python3 simulate.py && streamlit run app.py`
-- 현재 데이터 저장은 **평면파일**(`analytics/data/`, git 미추적 — seed로 재생성). **MySQL 적재 전환은 다음 작업.**
-- 상세 문서: [`analytics/README.md`](./analytics/README.md)
 
 ---
 
@@ -464,7 +443,7 @@ view_home ──► click_product ──► view_detail ──► click_checkout
 ## 8. 외부 데이터 파이프라인
 
 > AI 수요 예측 모델의 정확도를 높이기 위해 공공 Open API 데이터를 배치로 수집합니다.  
-> Spring Batch Job이 **매일 새벽 2시**에 실행되어 MySQL/MongoDB에 적재합니다.
+> Spring Batch Job이 **매일 새벽 2시**에 실행되어 MySQL에 적재합니다.
 
 ### 수집 데이터 목록
 
@@ -842,4 +821,3 @@ Initial data used in Streamlit dashboard demos may be simulated Mock Data.
 
 ---
 
-> **문의**: [leewon12381@gmail.com](mailto:leewon12381@gmail.com)
